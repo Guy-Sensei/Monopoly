@@ -14,7 +14,7 @@ namespace Monopoly
             moveString = "Hard to port!";
         }
 
-        override void Move(int incr)
+        protected override void Move(int incr)
         {
             base.Move(incr);
         }

@@ -14,9 +14,9 @@ namespace Monopoly
             moveString = "Hurry up and load the body! We gotta roll!";
         }
 
-        override void Move(int incr)
+        protected override void Move(int increment)
         {
-            base.Move(incr);
+            base.Move(increment);
         }
     }
 }

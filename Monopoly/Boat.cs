@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    public class Boat : Player
+    class Boat : Player
     {
         public Boat(int playerID, TOKEN tok)
             : base(playerID, tok)
@@ -14,7 +14,7 @@ namespace Monopoly
             moveString = "Makin' waves, man...";
         }
 
-        override void Move(int incr)
+        protected override void Move(int incr)
         {
             base.Move(incr);
         }

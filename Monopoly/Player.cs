@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    public class Player
+    abstract class Player
     {
         public int playerNumber;
         public int money;
@@ -38,7 +38,7 @@ namespace Monopoly
             Move(d1 + d2);
         }
 
-        public virtual void Move(int increment)
+        protected virtual void Move(int increment)
         {
             position += increment;
             

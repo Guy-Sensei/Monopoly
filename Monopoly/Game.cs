@@ -131,37 +131,46 @@ namespace Monopoly
                     }
                 }
 
-                System.Type t;
+                // create player object and store in list of players
+                Player pl;
                 switch ((TOKEN)selectedToken)
                 {
                     case TOKEN.BATTLESHIP:
-                        t = typeof(BattleShip);
+                        pl = new BattleShip(i, (TOKEN)selectedToken);
                         break;
 
                     case TOKEN.BOAT:
+                        pl = new Boat(i, (TOKEN)selectedToken);
                         break;
 
                     case TOKEN.DOG:
+                        pl = new Dog(i, (TOKEN)selectedToken);
                         break;
 
                     case TOKEN.RACE_CAR:
+                        pl = new RaceCar(i, (TOKEN)selectedToken);
                         break;
 
                     case TOKEN.SHOE:
+                        pl = new Shoe(i, (TOKEN)selectedToken);
                         break;
 
                     case TOKEN.THIMBLE:
+                        pl = new Thimble(i, (TOKEN)selectedToken);
                         break;
 
                     case TOKEN.TOP_HAT:
+                        pl = new TopHat(i, (TOKEN)selectedToken);
                         break;
 
                     case TOKEN.WHEEL_BARROW:
+                        pl = new WheelBarrow(i, (TOKEN)selectedToken);
+                        break;
+                    default:
+                        pl = new BattleShip(i, (TOKEN)selectedToken);
                         break;
                 }
 
-                // create player object and store in list of players
-                Player pl = new  (i, (TOKEN)selectedToken);
                 players.Add(pl);
 
                 // add the selected token to the list of used tokens
@@ -177,7 +186,7 @@ namespace Monopoly
         {
             for (int i = 0; i < numPlayers; i++)
             {
-                Console.WriteLine("Player " + (i+1));
+                Console.WriteLine("Player " + (i+1) + " (" + players[i].token.ToString() + ")");
                 Console.WriteLine("Money = " + players[i].money);
                 Console.WriteLine("Position = " + players[i].position + "\n");
             }
